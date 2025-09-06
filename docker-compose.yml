@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend2:
+    build: ./backend2
+    ports:
+      - "5000:5000"
+    container_name: backend2
+
+  frontend2:
+    build: ./frontend2
+    ports:
+      - "80:80"
+    container_name: frontend2
+    depends_on:
+      - backend2
